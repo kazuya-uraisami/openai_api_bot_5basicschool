@@ -41,7 +41,7 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title("Your AI Partner『合格本気で応援くん』")
+st.title("Your AI Partner『合格 honki 応援くん』")
 st.image("5_basicschoool")
 st.write("AI Partner helps you to go get the licenses.")
 
