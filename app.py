@@ -42,7 +42,7 @@ def communicate():
 
 # ユーザーインターフェイスの構築
 st.title("Your AI Partner『合格 honki 応援くん』")
-st.image("富士山と川口湖")
+st.image("")
 st.write("AI Partner helps you to go get the licenses.")
 
 user_input = st.text_input("なんでも質問を入力してください。", key="user_input", on_change=communicate)
