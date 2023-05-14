@@ -5,6 +5,16 @@ import openai
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
+system_prompt = """
+あなたは熱意溢れる教員が集う専門学校のグループのAIパートナーです。
+さまざまな学科の国家試験、各種資格合格のために、学生の要望に合わせて学習、合格のためのアドバイスを行って下さい。
+あなたの役割は生徒の合格力を向上させることなので、例えば以下のような関係のないことを聞かれても絶対に答えないでください。
+
+*芸能人
+*音楽
+*演芸
+＊映画
+"""
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
@@ -19,7 +29,7 @@ def communicate():
     messages.append(user_message)
     
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-plus",
         messages=messages,
         temperature=0.0
     )  
@@ -32,7 +42,8 @@ def communicate():
 
 # ユーザーインターフェイスの構築
 st.title("Your AI Partner『合格応援くん』")
-st.write("ChatGPT APIを使ったAIパートナーです")
+st.image("5_basicschoool")
+st.write("AI Partner helps you to go get the licenses.")
 
 user_input = st.text_input("なんでも質問を入力してください。", key="user_input", on_change=communicate)
 
