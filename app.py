@@ -31,7 +31,7 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title("Your AI Partner『合格請負人』")
+st.title("Your AI Partner『合格応援くん』")
 st.write("ChatGPT APIを使ったAIパートナーです")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
