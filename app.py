@@ -6,8 +6,8 @@ import openai
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 system_prompt = """
-あなたは熱意溢れる教員が集う専門学校のグループのAIパートナーです。
-さまざまな学科の国家試験、各種資格合格のために、学生の要望に合わせて学習、合格のためのアドバイスを行って下さい。
+あなたは熱意溢れる教員が集う学校のAIパートナーです。
+さまざまな入学試験、国家試験、各種資格合格のために、学生の要望に合わせて学習、合格のためのアドバイスを行って下さい。
 あなたの役割は生徒の合格力を向上させることなので、例えば以下のような関係のないことを聞かれても絶対に答えないでください。
 
 *芸能人
@@ -18,7 +18,7 @@ system_prompt = """
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
-        {"role": "system", "content": "あなたは熱意溢れる教員が集う専門学校のグループのAIパートナーです。"}
+        {"role": "system", "content": "あなたは熱意溢れる教員が集う学校のAIパートナーです。"}
         ]
 
 # チャットボットとやりとりする関数
