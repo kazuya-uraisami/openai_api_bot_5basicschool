@@ -8,7 +8,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
-        {"role": "system", "content": "あなたは優秀なAIパートナーです。"}
+        {"role": "system", "content": "あなたは熱意溢れる教員が集う専門学校のグループのAIパートナーです。"}
         ]
 
 # チャットボットとやりとりする関数
@@ -31,7 +31,7 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title("Your AI Partner『生真面目くん』")
+st.title("Your AI Partner『合格請負人』")
 st.write("ChatGPT APIを使ったAIパートナーです")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
